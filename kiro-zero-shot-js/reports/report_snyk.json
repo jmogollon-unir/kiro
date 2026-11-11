@@ -1,0 +1,136 @@
+{
+    "$schema": "https://docs.oasis-open.org/sarif/sarif/v2.1.0/errata01/os/schemas/sarif-schema-2.1.0.json",
+    "version": "2.1.0",
+    "runs": [
+        {
+            "tool": {
+                "driver": {
+                    "name": "SnykCode",
+                    "semanticVersion": "1.1308.4",
+                    "version": "1.1308.4",
+                    "informationUri": "https://docs.snyk.io/",
+                    "rules": [
+                        {
+                            "id": "javascript/DisablePoweredBy",
+                            "name": "DisablePoweredBy",
+                            "shortDescription": {
+                                "text": "Information Exposure - X-Powered-By Header"
+                            },
+                            "defaultConfiguration": {
+                                "level": "warning"
+                            },
+                            "help": {
+                                "markdown": "## Details\n\nSensitive data includes: personally identifiable information (PII) of employees, customers, users, or other third parties; financial information; code; intellectual property; or protected network information such as passwords. Exposure of sensitive information to an unauthorized actor occurs when any party who does not require this information for business purposes can remove this information from the secure network.\nConsequences of exposure can include holding it for ransom payment, identity theft, or access to other internal network resources-along with financial loss due to regulatory fines, court settlements, or cost to restore compromised systems. As most attackers aim to extract sensitive information, this CWE only describes exploits that take advantage of vulnerabilities related to how data is handled: the management, storage, transfer, or removal of sensitive information.\n\n## Best practices for prevention\n- Encrypt data at all times, whether in transit or at rest.\n- When transporting data, always use a secure protocol such as TLS.\n- Before collecting PII or financial information, consider whether there is a true business need for this information; similarly, before storing the data, ensure that there is an ongoing business need.\n- Classify all incoming data according to privacy and security guidelines to improve awareness of sensitive data.\n- Ensure that caching is disabled for all transactions involving sensitive information.\n- Store passwords with secure, salted hashing functions.\n- Apply a network-wide least-privilege policy so sensitive data is provided only to users with business need to know.",
+                                "text": ""
+                            },
+                            "properties": {
+                                "tags": [
+                                    "javascript",
+                                    "DisablePoweredBy",
+                                    "Security"
+                                ],
+                                "categories": [
+                                    "Security"
+                                ],
+                                "exampleCommitFixes": [],
+                                "exampleCommitDescriptions": [],
+                                "precision": "very-high",
+                                "repoDatasetSize": 0,
+                                "cwe": [
+                                    "CWE-200"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            "results": [
+                {
+                    "ruleId": "javascript/DisablePoweredBy",
+                    "ruleIndex": 0,
+                    "level": "warning",
+                    "message": {
+                        "text": "Disable X-Powered-By header for your Express app (consider using Helmet middleware), because it exposes information about the used framework to potential attackers.",
+                        "markdown": "Disable X-Powered-By header for your {0} (consider using Helmet middleware), because it exposes information about the used framework to potential attackers.",
+                        "arguments": [
+                            "[Express app](0)"
+                        ]
+                    },
+                    "locations": [
+                        {
+                            "id": 0,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "index.js",
+                                    "uriBaseId": "%SRCROOT%"
+                                },
+                                "region": {
+                                    "startLine": 4,
+                                    "endLine": 4,
+                                    "startColumn": 13,
+                                    "endColumn": 20
+                                }
+                            }
+                        }
+                    ],
+                    "fingerprints": {
+                        "identity": "aaf1b12a-b528-478d-9883-4a083fe93809",
+                        "0": "c8cd6d144746745c2a7e52849e79a05558dc5206202eed219c5deb1b270ae09f",
+                        "1": "ae77ea27.4773f344.8b18f948.d7919eeb.a1fb1152.5fce695c.ea4b1c47.89d75565.ae77ea27.4773f344.c90145a5.d7919eeb.a1fb1152.5fce695c.60d372c8.89d75565",
+                        "snyk/asset/finding/v1": "aaf1b12a-b528-478d-9883-4a083fe93809"
+                    },
+                    "codeFlows": [
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "id": 0,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "index.js",
+                                                        "uriBaseId": "%SRCROOT%"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 4,
+                                                        "endLine": 4,
+                                                        "startColumn": 13,
+                                                        "endColumn": 20
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "properties": {
+                        "isAutofixable": true,
+                        "priorityScore": 400,
+                        "priorityScoreFactors": [
+                            {
+                                "label": true,
+                                "type": "hotFileCodeFlow"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "properties": {
+                "coverage": [
+                    {
+                        "files": 1,
+                        "isSupported": true,
+                        "lang": ".js",
+                        "type": "SUPPORTED"
+                    }
+                ]
+            },
+            "automationDetails": {
+                "id": "Snyk/Code/2026-11-10T23:12:08Z"
+            }
+        }
+    ]
+}

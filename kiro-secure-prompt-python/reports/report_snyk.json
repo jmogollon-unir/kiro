@@ -1,0 +1,136 @@
+{
+    "$schema": "https://docs.oasis-open.org/sarif/sarif/v2.1.0/errata01/os/schemas/sarif-schema-2.1.0.json",
+    "version": "2.1.0",
+    "runs": [
+        {
+            "tool": {
+                "driver": {
+                    "name": "SnykCode",
+                    "semanticVersion": "1.1308.4",
+                    "version": "1.1308.4",
+                    "informationUri": "https://docs.snyk.io/",
+                    "rules": [
+                        {
+                            "id": "python/NoHardcodedCredentials",
+                            "name": "NoHardcodedCredentials",
+                            "shortDescription": {
+                                "text": "Use of Hardcoded Credentials"
+                            },
+                            "defaultConfiguration": {
+                                "level": "note"
+                            },
+                            "help": {
+                                "markdown": "\n## Details\n\nDevelopers may use hardcoded credentials for convenience when coding in order to simplify their workflow. While they are responsible for removing these before production, occasionally this task may fall through the cracks. This also becomes a maintenance challenge when credentials are re-used across multiple applications.\n\nOnce attackers gain access, they may take advantage of privilege level to remove or alter data, take down a site or app, or hold any of the above for ransom. The risk across multiple similar projects is even greater. If code containing the credentials is reused across multiple projects, they will all be compromised.\n\n## Best practices for prevention\n* Plan software architecture such that keys and passwords are always stored outside the code, wherever possible.\n* Plan encryption into software architecture for all credential information and ensure proper handling of keys, credentials, and passwords.\n* Prompt for a secure password on first login rather than hard-code a default password.\n* If a hardcoded password or credential must be used, limit its use, for example, to system console users rather than via the network.\n* Use strong hashes for inbound password authentication, ideally with randomly assigned salts to increase the difficulty level in case of brute-force attack.",
+                                "text": ""
+                            },
+                            "properties": {
+                                "tags": [
+                                    "python",
+                                    "NoHardcodedCredentials",
+                                    "Security"
+                                ],
+                                "categories": [
+                                    "Security"
+                                ],
+                                "exampleCommitFixes": [],
+                                "exampleCommitDescriptions": [],
+                                "precision": "very-high",
+                                "repoDatasetSize": 0,
+                                "cwe": [
+                                    "CWE-798"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            "results": [
+                {
+                    "ruleId": "python/NoHardcodedCredentials",
+                    "ruleIndex": 0,
+                    "level": "note",
+                    "message": {
+                        "text": "Do not hardcode credentials in code. Found hardcoded credential used in here.",
+                        "markdown": "Do not hardcode credentials in code. Found {0} credential used in here.",
+                        "arguments": [
+                            "[hardcoded](0)"
+                        ]
+                    },
+                    "locations": [
+                        {
+                            "id": 0,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "main.py",
+                                    "uriBaseId": "%SRCROOT%"
+                                },
+                                "region": {
+                                    "startLine": 30,
+                                    "endLine": 30,
+                                    "startColumn": 5,
+                                    "endColumn": 9
+                                }
+                            }
+                        }
+                    ],
+                    "fingerprints": {
+                        "0": "bb984afd2a2bf8c24f461a399903f3d6358046ecbb26a6e3536b03f6c3a414f7",
+                        "1": "28b366c6.a202b70f.762b3708.4c6f6d1c.1a0abf6d.474e208e.51b4c2f8.ebed174f.28b366c6.a202b70f.762b3708.4c6f6d1c.1a0abf6d.474e208e.51b4c2f8.ebed174f",
+                        "snyk/asset/finding/v1": "036f98f8-7413-4c14-8bd3-e49b50cba768",
+                        "identity": "036f98f8-7413-4c14-8bd3-e49b50cba768"
+                    },
+                    "codeFlows": [
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "id": 0,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "main.py",
+                                                        "uriBaseId": "%SRCROOT%"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 30,
+                                                        "endLine": 30,
+                                                        "startColumn": 17,
+                                                        "endColumn": 26
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "properties": {
+                        "isAutofixable": true,
+                        "priorityScore": 250,
+                        "priorityScoreFactors": [
+                            {
+                                "label": true,
+                                "type": "hotFileCodeFlow"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "properties": {
+                "coverage": [
+                    {
+                        "files": 1,
+                        "isSupported": true,
+                        "lang": ".py",
+                        "type": "SUPPORTED"
+                    }
+                ]
+            },
+            "automationDetails": {
+                "id": "Snyk/Code/2026-11-10T23:11:43Z"
+            }
+        }
+    ]
+}

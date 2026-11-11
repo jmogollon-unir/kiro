@@ -1,0 +1,77 @@
+{
+    "total": 1,
+    "p": 1,
+    "ps": 500,
+    "paging": {
+        "pageIndex": 1,
+        "pageSize": 500,
+        "total": 1
+    },
+    "effortTotal": 5,
+    "issues": [
+        {
+            "key": "abecaaea-f29a-4941-8486-64a81cbabf1a",
+            "rule": "javascript:S5689",
+            "severity": "MINOR",
+            "component": "kiro-zero-shot-js:index.js",
+            "project": "kiro-zero-shot-js",
+            "line": 4,
+            "hash": "4af77bcf43147b78489dd9c4043bfe01",
+            "textRange": {
+                "startLine": 4,
+                "endLine": 4,
+                "startOffset": 6,
+                "endOffset": 9
+            },
+            "flows": [],
+            "status": "OPEN",
+            "message": "This framework implicitly discloses version information by default. Make sure it is safe here.",
+            "effort": "5min",
+            "debt": "5min",
+            "author": "jcmb@macbook-pro-de-julieth.local",
+            "tags": [
+                "cwe",
+                "express.js",
+                "former-hotspot"
+            ],
+            "creationDate": "2026-11-10T22:44:37+0000",
+            "updateDate": "2026-11-11T00:30:48+0000",
+            "type": "VULNERABILITY",
+            "scope": "MAIN",
+            "quickFixAvailable": false,
+            "messageFormattings": [],
+            "codeVariants": [],
+            "cleanCodeAttribute": "TRUSTWORTHY",
+            "cleanCodeAttributeCategory": "RESPONSIBLE",
+            "impacts": [
+                {
+                    "softwareQuality": "SECURITY",
+                    "severity": "LOW"
+                }
+            ],
+            "issueStatus": "OPEN",
+            "prioritizedRule": false,
+            "fromSonarQubeUpdate": false,
+            "internalTags": [],
+            "linkedTicketStatus": "NOT_LINKED"
+        }
+    ],
+    "components": [
+        {
+            "key": "kiro-zero-shot-js:index.js",
+            "enabled": true,
+            "qualifier": "FIL",
+            "name": "index.js",
+            "longName": "index.js",
+            "path": "index.js"
+        },
+        {
+            "key": "kiro-zero-shot-js",
+            "enabled": true,
+            "qualifier": "TRK",
+            "name": "kiro-zero-shot-js",
+            "longName": "kiro-zero-shot-js"
+        }
+    ],
+    "facets": []
+}
